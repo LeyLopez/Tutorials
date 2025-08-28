@@ -7,6 +7,8 @@ import org.mapstruct.Named;
 import unimagdalena.edu.tutorials.entity.Mentory;
 import unimagdalena.edu.tutorials.entity.Subject;
 import unimagdalena.edu.tutorials.entity.User;
+import unimagdalena.edu.tutorials.service.SubjectService;
+import unimagdalena.edu.tutorials.service.UserService;
 
 import javax.swing.*;
 
