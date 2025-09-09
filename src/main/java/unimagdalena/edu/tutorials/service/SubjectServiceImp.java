@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import unimagdalena.edu.tutorials.dto.SubjectDTO;
 import unimagdalena.edu.tutorials.dto.SubjectMapper;
 import unimagdalena.edu.tutorials.entity.Subject;
+import unimagdalena.edu.tutorials.exception.NotFoundException;
 import unimagdalena.edu.tutorials.repositories.SubjectRepository;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class SubjectServiceImp implements SubjectService {
 
 
     @Override
-    public Optional<SubjectDTO> findSubjectById(Long id) {
+    public Optional<SubjectDTO> findById(Long id) {
         return subjectRepository.findById(id).map(subjectMapper::toDTO);
     }
 
@@ -53,5 +54,10 @@ public class SubjectServiceImp implements SubjectService {
                     return subjectRepository.save(subjectInBD);
                 }
         ).map(subjectMapper::toDTO);
+    }
+
+    @Override
+    public Subject findSubjectById(Long id) {
+        return subjectRepository.findById(id).orElseThrow(()->new NotFoundException("The subject with the id: "+id+" does not exist."));
     }
 }
