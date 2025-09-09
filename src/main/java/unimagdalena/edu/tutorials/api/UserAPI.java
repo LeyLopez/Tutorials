@@ -31,7 +31,7 @@ public class UserAPI {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable("id") Long id){
-        return userService.findUserById(id).map(
+        return userService.findById(id).map(
                 user->ResponseEntity.ok().body(user))
                 .orElseThrow(()-> new NotFoundException("The user with id " + id + " does not exist."));
     }
@@ -61,7 +61,7 @@ public class UserAPI {
 
     @DeleteMapping("/{id}")
     private ResponseEntity<UserDTO> deleteUser(@PathVariable("id") Long id){
-        return userService.findUserById(id).map(user->{
+        return userService.findById(id).map(user->{
             userService.deleteUserById(id);
 
             return ResponseEntity.ok().body(user);

@@ -29,7 +29,7 @@ public class SubjectAPI {
 
     @GetMapping("/{id}")
     private ResponseEntity<SubjectDTO> getSubject(@PathVariable Long id) {
-        return subjectService.findSubjectById(id)
+        return subjectService.findById(id)
                 .map(subject-> ResponseEntity.ok().body(subject))
                 .orElseThrow(()-> new NotFoundException("The subject with id " + id + " does not exist."));
     }
@@ -58,7 +58,7 @@ public class SubjectAPI {
 
     @DeleteMapping("/{id}")
     private ResponseEntity<SubjectDTO> deleteSubject(@PathVariable Long id) {
-        return subjectService.findSubjectById(id).map(
+        return subjectService.findById(id).map(
                 subject->{
                     subjectService.deleteSubjectById(id);
                     return ResponseEntity.ok().body(subject);

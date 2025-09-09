@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import unimagdalena.edu.tutorials.dto.UserDTO;
 import unimagdalena.edu.tutorials.dto.UserMapper;
 import unimagdalena.edu.tutorials.entity.User;
+import unimagdalena.edu.tutorials.exception.NotFoundException;
 import unimagdalena.edu.tutorials.repositories.UserRepository;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public Optional<UserDTO> findUserById(Long id) {
+    public Optional<UserDTO> findById(Long id) {
         return userRepository.findById(id).map(userMapper::toDto);
     }
 
@@ -64,5 +65,10 @@ public class UserServiceImp implements UserService {
     @Override
     public void deleteUserById(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public User findUserById(Long id) {
+        return userRepository.findById(id).orElseThrow(()->new NotFoundException("The user with the id: "+id+" does not exist."));
     }
 }

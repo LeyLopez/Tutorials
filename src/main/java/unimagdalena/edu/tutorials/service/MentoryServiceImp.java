@@ -5,6 +5,7 @@ import unimagdalena.edu.tutorials.dto.MentoryDTO;
 import unimagdalena.edu.tutorials.dto.MentoryMapper;
 import unimagdalena.edu.tutorials.entity.Mentory;
 import unimagdalena.edu.tutorials.entity.MentoryStatus;
+import unimagdalena.edu.tutorials.exception.NotFoundException;
 import unimagdalena.edu.tutorials.repositories.MentoryRepository;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class MentoryServiceImp implements MentoryService {
     }
 
     @Override
-    public Optional<MentoryDTO> findMentoryById(Long id) {
+    public Optional<MentoryDTO> findById(Long id) {
         return mentoryRepository.findById(id).map(mentoryMapper::toDto);
     }
 
@@ -66,5 +67,10 @@ public class MentoryServiceImp implements MentoryService {
     @Override
     public void deleteMentorById(Long id) {
         mentoryRepository.deleteById(id);
+    }
+
+    @Override
+    public Mentory findMentoryById(Long id) {
+        return mentoryRepository.findById(id).orElseThrow(()->new NotFoundException("The mentory with the id " + id + " does not exist."));
     }
 }
