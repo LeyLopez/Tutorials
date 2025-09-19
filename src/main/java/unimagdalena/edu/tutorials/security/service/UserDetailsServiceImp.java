@@ -1,4 +1,4 @@
-package unimagdalena.edu.tutorials.service;
+package unimagdalena.edu.tutorials.security.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -7,8 +7,8 @@ import org.mapstruct.Named;
 import unimagdalena.edu.tutorials.entity.Mentory;
 import unimagdalena.edu.tutorials.entity.Registration;
 import unimagdalena.edu.tutorials.entity.User;
-import unimagdalena.edu.tutorials.service.MentoryService;
-import unimagdalena.edu.tutorials.service.UserService;
+import unimagdalena.edu.tutorials.security.service.MentoryService;
+import unimagdalena.edu.tutorials.security.service.UserService;
 
 @Mapper(componentModel = "spring")
 public interface RegistrationMapper {

@@ -7,7 +7,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import unimagdalena.edu.tutorials.entity.Disponibility;
 import unimagdalena.edu.tutorials.entity.User;
-import unimagdalena.edu.tutorials.service.UserService;
+import unimagdalena.edu.tutorials.security.service.UserService;
 
 @Mapper(componentModel = "spring")
 public interface DisponibilityMapper {

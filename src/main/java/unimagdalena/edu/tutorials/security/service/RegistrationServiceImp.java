@@ -1,9 +1,8 @@
-package unimagdalena.edu.tutorials.service;
+package unimagdalena.edu.tutorials.security.service;
 
 import org.springframework.stereotype.Service;
 import unimagdalena.edu.tutorials.dto.RegistrationDTO;
 import unimagdalena.edu.tutorials.dto.RegistrationMapper;
-import unimagdalena.edu.tutorials.entity.Mentory;
 import unimagdalena.edu.tutorials.entity.Registration;
 import unimagdalena.edu.tutorials.entity.RegistrationStatus;
 import unimagdalena.edu.tutorials.repositories.RegistrationRepository;

@@ -1,4 +1,4 @@
-package unimagdalena.edu.tutorials.service;
+package unimagdalena.edu.tutorials.security.service;
 
 import unimagdalena.edu.tutorials.dto.SubjectDTO;
 
