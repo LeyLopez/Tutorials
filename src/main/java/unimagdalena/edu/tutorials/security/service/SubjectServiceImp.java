@@ -54,4 +54,9 @@ public class SubjectServiceImp implements SubjectService {
                 }
         ).map(subjectMapper::toDTO);
     }
+
+    @Override
+    public Subject findById(Long id) {
+        return subjectRepository.findById(id).orElse(null);
+    }
 }

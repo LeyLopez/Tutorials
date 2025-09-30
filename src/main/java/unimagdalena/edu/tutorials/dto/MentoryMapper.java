@@ -28,12 +28,12 @@ public interface MentoryMapper {
 
     @Named("IdToUser")
     default User mapIdToUser(Long userId, @Context UserService userService){
-        return userId != null ? userService.findUserById(userId) : null;
+        return userId != null ? userService.findById(userId) : null;
     }
 
     @Named("IdToSubject")
     default Subject mapIdToSubject(Long subjectId, @Context SubjectService subjectService){
-        return subjectId != null ? subjectService.findSubjectById(subjectId) : null;
+        return subjectId != null ? subjectService.findById(subjectId) : null;
     }
 
 }

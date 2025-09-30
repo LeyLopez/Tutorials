@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import unimagdalena.edu.tutorials.dto.RoleDTO;
 import unimagdalena.edu.tutorials.exception.NotFoundException;
-import unimagdalena.edu.tutorials.service.RoleService;
+import unimagdalena.edu.tutorials.security.service.RoleService;
 
 import java.net.URI;
 import java.util.List;

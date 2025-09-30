@@ -13,4 +13,5 @@ public interface UserService {
     UserDTO saveUser(UserDTO userDTO);
     Optional<UserDTO> updateUserById(Long id, UserDTO userDTO);
     void deleteUserById(Long id);
+    User findById(Long id);
 }

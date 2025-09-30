@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import unimagdalena.edu.tutorials.dto.DisponibilityDTO;
 import unimagdalena.edu.tutorials.exception.NotFoundException;
-import unimagdalena.edu.tutorials.service.DisponibilityService;
+import unimagdalena.edu.tutorials.security.service.DisponibilityService;
 
 import java.net.URI;
 import java.util.List;

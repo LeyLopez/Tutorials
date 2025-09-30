@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import unimagdalena.edu.tutorials.dto.UserDTO;
 import unimagdalena.edu.tutorials.exception.NotFoundException;
-import unimagdalena.edu.tutorials.service.UserService;
+import unimagdalena.edu.tutorials.security.service.UserService;
+
 
 
 import java.net.URI;
@@ -31,7 +32,7 @@ public class UserAPI {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable("id") Long id){
-        return userService.findById(id).map(
+        return userService.findUserById(id).map(
                 user->ResponseEntity.ok().body(user))
                 .orElseThrow(()-> new NotFoundException("The user with id " + id + " does not exist."));
     }
@@ -61,7 +62,7 @@ public class UserAPI {
 
     @DeleteMapping("/{id}")
     private ResponseEntity<UserDTO> deleteUser(@PathVariable("id") Long id){
-        return userService.findById(id).map(user->{
+        return userService.findUserById(id).map(user->{
             userService.deleteUserById(id);
 
             return ResponseEntity.ok().body(user);

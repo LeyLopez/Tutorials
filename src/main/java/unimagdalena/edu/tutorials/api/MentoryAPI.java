@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import unimagdalena.edu.tutorials.dto.MentoryDTO;
 import unimagdalena.edu.tutorials.exception.NotFoundException;
-import unimagdalena.edu.tutorials.service.MentoryService;
+import unimagdalena.edu.tutorials.security.service.MentoryService;
 
 import java.net.URI;
 import java.util.List;
@@ -28,7 +28,7 @@ public class MentoryAPI {
 
     @GetMapping("/{id}")
     private ResponseEntity<MentoryDTO> getMentoryById(@PathVariable("id") Long id){
-        return mentoryService.findById(id)
+        return mentoryService.findMentoryById(id)
                 .map(mentory->ResponseEntity.ok().body(mentory))
                 .orElseThrow(()->new NotFoundException("The mentory with id " + id + " does not exist."));
     }
@@ -52,14 +52,14 @@ public class MentoryAPI {
     @PutMapping("/{id}")
     private ResponseEntity<MentoryDTO> updateMentory(@PathVariable("id") Long id, @RequestBody MentoryDTO mentoryDTO){
         Optional<MentoryDTO> mentoryToUpdate = mentoryService.updateMentorById(id, mentoryDTO);
-        return mentoryService.findById(id)
+        return mentoryService.findMentoryById(id)
                 .map(mentory-> ResponseEntity.ok().body(mentory))
                 .orElseGet(()->{return createMentory(mentoryDTO);});
     }
 
     @DeleteMapping("/{id}")
     private ResponseEntity<MentoryDTO> deleteMentory(@PathVariable("id") Long id){
-        return mentoryService.findById(id).map(
+        return mentoryService.findMentoryById(id).map(
                 mentory->ResponseEntity.ok().body(mentory)
         ).orElseThrow(()->new NotFoundException("The mentory with id " + id + " does not exist."));
     }

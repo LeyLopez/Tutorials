@@ -7,7 +7,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import unimagdalena.edu.tutorials.dto.RegistrationDTO;
 import unimagdalena.edu.tutorials.dto.RegistrationMapper;
 import unimagdalena.edu.tutorials.exception.NotFoundException;
-import unimagdalena.edu.tutorials.service.RegistrationService;
+import unimagdalena.edu.tutorials.security.service.RegistrationService;
 
 import java.net.URI;
 import java.util.List;

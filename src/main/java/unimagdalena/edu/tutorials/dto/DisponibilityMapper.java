@@ -24,7 +24,7 @@ public interface DisponibilityMapper {
 
     @Named("IdToUser")
     default User mapIdToUser(Long userId, @Context UserService userService){
-        return userId != null ? userService.findUserById(userId) : null;
+        return userId != null ? userService.findById(userId) : null;
     }
 
 
