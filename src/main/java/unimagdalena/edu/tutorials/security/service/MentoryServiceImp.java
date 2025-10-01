@@ -67,4 +67,9 @@ public class MentoryServiceImp implements MentoryService {
     public void deleteMentorById(Long id) {
         mentoryRepository.deleteById(id);
     }
+
+    @Override
+    public Mentory findById(Long mentoryId) {
+        return mentoryRepository.findById(mentoryId).orElse(null);
+    }
 }

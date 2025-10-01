@@ -29,12 +29,12 @@ public interface RegistrationMapper {
 
     @Named("IdToMentory")
     default Mentory mapIdToMentory(Long mentoryId, @Context MentoryService mentoryService) {
-        return mentoryId != null ? mentoryService.findMentoryById(mentoryId) : null;
+        return mentoryId != null ? mentoryService.findById(mentoryId) : null;
     }
 
     @Named("IdToStudent")
     default User mapIdToStudent(Long userId, @Context UserService userService){
-        return userId != null ? userService.findUserById(userId) : null;
+        return userId != null ? userService.findById(userId) : null;
     }
 
 }

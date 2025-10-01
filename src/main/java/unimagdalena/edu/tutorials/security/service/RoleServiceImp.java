@@ -29,7 +29,7 @@ public class RoleServiceImp implements RoleService {
     }
 
     @Override
-    public Optional<RoleDTO> findRoleByName(String name) {
+    public Optional<RoleDTO> findRoleByName(ERole name) {
         return roleRepository.findByName(name).map(roleMapper::toDto);
     }
 
