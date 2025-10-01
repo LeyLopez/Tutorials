@@ -1,6 +1,7 @@
 package unimagdalena.edu.tutorials.security.service;
 
 import unimagdalena.edu.tutorials.dto.MentoryDTO;
+import unimagdalena.edu.tutorials.entity.Mentory;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,4 +12,6 @@ public interface MentoryService {
     MentoryDTO saveMentory(MentoryDTO mentorDTO);
     Optional<MentoryDTO> updateMentorById(Long id, MentoryDTO mentorDTO);
     void deleteMentorById(Long id);
+
+    Mentory findById(Long mentoryId);
 }

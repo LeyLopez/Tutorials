@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/registration")
+@CrossOrigin(origins = "*")
 public class RegistrationAPI {
     private final RegistrationService registrationService;
 

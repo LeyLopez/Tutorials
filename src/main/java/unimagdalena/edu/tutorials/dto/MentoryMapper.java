@@ -22,8 +22,8 @@ public interface MentoryMapper {
     @Mapping(target = "mentoryId", ignore = true)
     MentoryDTO toDtoWithoutId(Mentory mentory);
 
-    @Mapping(source = "subject.subjectId", target = "subject", qualifiedByName = "IdToSubject")
-    @Mapping(source = "tutor.userId", target = "tutor", qualifiedByName = "IdToUser")
+    @Mapping(source = "subject", target = "subject", qualifiedByName = "IdToSubject")
+    @Mapping(source = "tutor", target = "tutor", qualifiedByName = "IdToUser")
     Mentory toEntity(MentoryDTO mentoryDTO, @Context UserService userService, @Context SubjectService subjectService);
 
     @Named("IdToUser")

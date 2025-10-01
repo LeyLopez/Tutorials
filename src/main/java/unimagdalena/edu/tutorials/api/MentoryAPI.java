@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/mentory")
+@CrossOrigin(origins = "*")
 public class MentoryAPI {
 
     private final MentoryService mentoryService;

@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/role")
+@CrossOrigin(origins = "*")
 public class RoleAPI {
 
     private final RoleService roleService;

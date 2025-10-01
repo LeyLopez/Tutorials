@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/subject")
+@CrossOrigin(origins = "*")
 public class SubjectAPI {
 
     private final SubjectService subjectService;

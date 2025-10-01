@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/disponibility")
+@CrossOrigin(origins = "*")
 public class DisponibilityAPI {
 
     private final DisponibilityService disponibilityService;

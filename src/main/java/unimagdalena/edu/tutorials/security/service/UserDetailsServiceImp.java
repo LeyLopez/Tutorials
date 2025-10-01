@@ -3,9 +3,11 @@ package unimagdalena.edu.tutorials.security.service;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 import unimagdalena.edu.tutorials.entity.User;
 import unimagdalena.edu.tutorials.repositories.UserRepository;
 
+@Service
 public class UserDetailsServiceImp implements UserDetailsService {
 
     private UserRepository userRepository;
